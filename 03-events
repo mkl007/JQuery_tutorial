@@ -1,0 +1,78 @@
+Commonly used JQuery Methods Events:
+
+Mouse Events	  Keyboard Events	  Form Events	  Document/Window Events
+click	            keypress	        submit	        load
+dblclick	        keydown	          change	        resize
+mouseenter	       keyup	          focus	          scroll
+mouseleave	 	                       blur	        unload
+
+click	
+dblclick	
+mouseenter	
+mouseleave
+
+TWO functions in one event
+
+$(document).ready(function(){
+  $("#p1").hover(function(){
+    alert("You entered p1!");
+  },
+  function(){
+    alert("Bye! You now leave p1!");
+  }); 
+});
+
+
+-----------focus---------
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("input").focus(function(){
+    $(this).css("background-color", "yellow");
+  });
+  $("input").blur(function(){
+    $(this).css("background-color", "green");
+  });
+});
+</script>
+</head>
+<body>
+
+Name: <input type="text" name="fullname"><br>
+Email: <input type="text" name="email">
+
+</body>
+</html>
+
+
+-----------------on method--------
+
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("p").on({
+    mouseenter: function(){
+      $(this).css("background-color", "lightgray");
+    },  
+    mouseleave: function(){
+      $(this).css("background-color", "lightblue");
+    }, 
+    click: function(){
+      $(this).css("background-color", "yellow");
+    }  
+  });
+});
+</script>
+</head>
+<body>
+
+<p>Click or move the mouse pointer over this paragraph.</p>
+
+</body>
+</html>
